@@ -9,7 +9,7 @@ export const AddTransaction = () => {
 
   let { addTransaction }: any = useContext(GlobalContext);
 
-  const onSubmit = (e: any) => {
+  const onSubmit = (e: React.FormEvent<EventTarget>) => {
     e.preventDefault();
 
     const newTransaction = {

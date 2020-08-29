@@ -5,26 +5,27 @@ import { initialStateTransaction } from "./Typeo";
 const initialState: initialStateTransaction = {
   transaction: [{ id: 1, text: "Bilal", ammount: 40 }],
 };
-
+type transType = {
+  type: string;
+  payload: number;
+};
 export const GlobalContext = createContext(initialState);
 
 let [state, dispatch] = useReducer(AppReducer, initialState);
-function deleteTransaction(id: any) {
-  dispatch({
-    type: "DELETE_TRANSACTION",
-    payload: id,
-  });
-}
-function addTransaction(transaction: string) {
-  dispatch({
-    type: "ADD_TRANSACTION",
-    payload: transaction,
-  });
-}
-type props = {
-  children: any;
-};
-export const GlobalProvider = ({ children }: props) => {
+
+export const GlobalProvider = ({ children }: any) => {
+  let deleteTransaction = (id: number) => {
+    dispatch({
+      type: "DELETE_TRANSACTION",
+      payload: id,
+    });
+  };
+  let addTransaction = (transaction: transType) => {
+    dispatch({
+      type: "ADD_TRANSACTION",
+      payload: transaction,
+    });
+  };
   return (
     <GlobalContext.Provider
       value={{
