@@ -16,7 +16,7 @@ const initialState: transactionType = {
 //   Description: string;
 //   Amount: number;
 // };
-export const GlobalContext = createContext<Partial<contextProps>>(initialState);
+export const GlobalContext = createContext(initialState);
 
 let [state, dispatch] = useReducer(AppReducer, initialState);
 
