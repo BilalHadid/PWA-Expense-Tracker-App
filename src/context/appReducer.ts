@@ -1,4 +1,6 @@
-export const AppReducer = (state: any, action: any) => {
+import { transactionType, actionType } from "./Typeo";
+
+export const AppReducer = (state: transactionType, action: actionType) => {
   switch (action.type) {
     case "DELETE_TRANSACTION":
       return {

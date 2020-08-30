@@ -1,15 +1,22 @@
 import React, { createContext, useReducer } from "react";
 import { AppReducer } from "./appReducer";
-import { initialStateTransaction } from "./Typeo";
+import {
+  transType,
+  transactionType,
+  contextProps,
+  initialStateTransaction,
+} from "./Typeo";
 
-const initialState: initialStateTransaction = {
+const initialState: transactionType = {
   transaction: [{ id: 1, text: "Bilal", ammount: 40 }],
 };
-type transType = {
-  type: string;
-  payload: number;
-};
-export const GlobalContext = createContext(initialState);
+
+// type StateObject = {
+//   ID: number;
+//   Description: string;
+//   Amount: number;
+// };
+export const GlobalContext = createContext<Partial<contextProps>>(initialState);
 
 let [state, dispatch] = useReducer(AppReducer, initialState);
 
