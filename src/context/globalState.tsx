@@ -11,11 +11,11 @@ const initialState: transactionType = {
   transaction: [{ id: 1, text: "Bilal", ammount: 40 }],
 };
 
-// type StateObject = {
-//   ID: number;
-//   Description: string;
-//   Amount: number;
-// };
+type StateObject = {
+  ID: number;
+  Description: string;
+  Amount: number;
+};
 export const GlobalContext = createContext(initialState);
 
 let [state, dispatch] = useReducer(AppReducer, initialState);
