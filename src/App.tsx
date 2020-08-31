@@ -16,7 +16,7 @@ function App() {
       <div className="container">
         <Ammount />
         <IncomeExpense />
-        <TransactionHistory />
+        {/* <TransactionHistory /> */}
         <Transaction />
         <AddTransaction />
       </div>

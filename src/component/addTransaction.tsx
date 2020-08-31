@@ -4,8 +4,8 @@ import { GlobalContext } from "../context/globalState";
 import "./component.css";
 
 export const AddTransaction = () => {
-  let [text, setText] = useState("");
-  let [ammount, setAmmount] = useState(0);
+  let [text, setText] = useState<string>("");
+  let [ammount, setAmmount] = useState<number>(0);
 
   let { addTransaction }: any = useContext(GlobalContext);
 

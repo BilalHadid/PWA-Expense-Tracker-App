@@ -1,10 +1,13 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/globalState";
+import { transType } from "../context/Typeo";
 import "./component.css";
 
 export const Ammount = () => {
-  const { transaction } = useContext(GlobalContext);
-  const amounts = transaction.map((transactions: any) => transactions.ammount);
+  const { transaction }: any = useContext(GlobalContext);
+  const amounts = transaction.map(
+    (trans: transType, index: number) => trans.ammount
+  );
   console.log(amounts);
   const total = amounts
     .reduce((acc: any, item: any) => (acc += item), 0)

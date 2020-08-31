@@ -11,16 +11,16 @@ const initialState: transactionType = {
   transaction: [{ id: 1, text: "Bilal", ammount: 40 }],
 };
 
-type StateObject = {
-  ID: number;
-  Description: string;
-  Amount: number;
-};
-export const GlobalContext = createContext(initialState);
-
-let [state, dispatch] = useReducer(AppReducer, initialState);
+// type StateObject = {
+//   ID: number;
+//   Description: string;
+//   Amount: number;
+// };
+export const GlobalContext = createContext<Partial<contextProps>>({});
 
 export const GlobalProvider = ({ children }: any) => {
+  let [state, dispatch] = useReducer(AppReducer, initialState);
+
   let deleteTransaction = (id: number) => {
     dispatch({
       type: "DELETE_TRANSACTION",
