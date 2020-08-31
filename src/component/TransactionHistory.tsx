@@ -1,20 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, Fragment } from "react";
 import { GlobalContext } from "../context/globalState";
 import { Transaction } from "./Transaction";
 import { transType } from "../context/Typeo";
-import { contextProps } from "../context/Typeo";
 
 export const TransactionHistory = () => {
-  let { transaction }: any = useContext<Partial<contextProps>>(GlobalContext);
+  let { transaction }: any = useContext(GlobalContext);
   return (
-    <div>
+    <Fragment>
       <h3>History</h3>
       <ul className="list">
         {" "}
-        {transaction.map((transactions: transType) => (
-          <Transaction key={transactions.id} transactions={transactions} />
+        {transaction.map((transaction: transType, id: number) => (
+          <Transaction key={transaction.id} transactions={transaction} />
         ))}
       </ul>
-    </div>
+    </Fragment>
   );
 };

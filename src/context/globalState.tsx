@@ -1,21 +1,11 @@
 import React, { createContext, useReducer } from "react";
 import { AppReducer } from "./appReducer";
-import {
-  transType,
-  transactionType,
-  contextProps,
-  initialStateTransaction,
-} from "./Typeo";
+import { transType, transactionType, contextProps } from "./Typeo";
 
 const initialState: transactionType = {
   transaction: [{ id: 1, text: "Bilal", ammount: 40 }],
 };
 
-// type StateObject = {
-//   ID: number;
-//   Description: string;
-//   Amount: number;
-// };
 export const GlobalContext = createContext<Partial<contextProps>>({});
 
 export const GlobalProvider = ({ children }: any) => {

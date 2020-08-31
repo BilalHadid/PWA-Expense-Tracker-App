@@ -9,7 +9,7 @@ export const AddTransaction = () => {
 
   let { addTransaction }: any = useContext(GlobalContext);
 
-  const onSubmit = (e: React.FormEvent<EventTarget>) => {
+  const onSubmit = (e: any) => {
     e.preventDefault();
 
     const newTransaction = {
@@ -29,7 +29,7 @@ export const AddTransaction = () => {
             id="text"
             type="text"
             value={text}
-            onChange={(e) => setText(e.target.value)}
+            onChange={(e: any) => setText(e.target.value)}
             placeholder="Enter Text..."
           />
         </div>
@@ -42,6 +42,7 @@ export const AddTransaction = () => {
             id="amount"
             type="number"
             value={ammount}
+            onChange={(e: any) => setAmmount(e.target.value)}
             placeholder="Enter ammount..."
           />
         </div>

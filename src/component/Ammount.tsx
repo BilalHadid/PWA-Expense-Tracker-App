@@ -6,9 +6,8 @@ import "./component.css";
 export const Ammount = () => {
   const { transaction }: any = useContext(GlobalContext);
   const amounts = transaction.map(
-    (trans: transType, index: number) => trans.ammount
+    (trans: transType, id: number) => trans.ammount
   );
-  console.log(amounts);
   const total = amounts
     .reduce((acc: any, item: any) => (acc += item), 0)
     .toFixed(2);

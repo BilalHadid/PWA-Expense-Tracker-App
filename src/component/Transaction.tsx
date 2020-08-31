@@ -4,7 +4,7 @@ import "./component.css";
 
 export const Transaction = ({ transactions }: any) => {
   let { deleteTransaction }: any = useContext(GlobalContext);
-  let sign = transactions.ammount < 0 ? "-" : "+";
+  let sign: any = transactions.ammount < 0 ? "-" : "+";
   return (
     <li className={transactions.ammount < 0 ? "minus" : "plus"}>
       {transactions.text}{" "}
