@@ -20,3 +20,12 @@ export type contextProps = {
   addTransaction: (trans: transType) => void;
   deleteTransaction: (id: number) => void;
 };
+export type configFirebase = {
+  apiKey: string;
+  authDomain: string;
+  databaseURL: string;
+  projectId: string;
+  storageBucket: string;
+  messagingSenderId: string;
+  appId: string;
+};
