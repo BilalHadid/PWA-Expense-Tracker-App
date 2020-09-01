@@ -12,7 +12,8 @@ this.addEventListener("install", (event) => {
           "/static/js/0.chunk.js",
           "/static/js/1.chunk.js",
           "/static/js/bundle.js",
-          "/static/js/manifest.json",
+          "/manifest.json",
+          "/favicon.ico",
         ]);
       })
       .catch((err) => {
