@@ -1,3 +1,11 @@
+Live NETLIFY URL:
+
+https://expense-tracker-app-pwa.netlify.app/
+
+Live Firebase URL:
+
+https://pwa-expense-tracker.web.app
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
